@@ -33,7 +33,7 @@ export default class extends Component {
                 <div className="creditorAndDetailsContainer">
                   <div className="creditorProfileContainer">
                     <div className="creditorProfilePicture">
-                      <image src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="Creditor!"></image>
+                      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="Creditor!"></img>
                     </div>
                     <div className="creditorInfo">
                       <h4>Cordelia F.</h4>
@@ -62,7 +62,7 @@ export default class extends Component {
                   <div className="contractDetailsColumn">
                     <p className="contractDetailsColumnTitle"><strong>Restricted Content Type:</strong></p>
                     <div>
-                      <image src="../static/assets/icons/ens.png" alt="restrictedContentTypeImage" className="restrictedContentTypeImage"></image>
+                      <img src="../static/assets/icons/ens.png" alt="restrictedContentTypeImage" className="restrictedContentTypeImage"></img>
                       <p className="contractAccounts">ERC20 Accounts (2)</p>
                     </div>
                   </div>

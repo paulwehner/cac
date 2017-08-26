@@ -113,7 +113,7 @@ export default class extends Component {
               </div>
             </div>
             <div className="buttonContainer">
-              <Link href='/loans'>
+              <Link href='/select_2'>
                 <Button>Next</Button>
               </Link>
             </div>

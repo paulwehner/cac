@@ -28,6 +28,9 @@ export default `
   .greenBackground {
     background-color: #${colors.green};
   }
+  .greenDarkBackground {
+    background-color: #${colors.greenDark};
+  }
   .blackBackground {
     background-color: #${colors.black};
   }
@@ -62,6 +65,9 @@ export default `
   }
   .green {
     color: #${colors.green};
+  }
+  .greenDark {
+    color: #${colors.greenDark};
   }
   .black {
     color: #${colors.black};
