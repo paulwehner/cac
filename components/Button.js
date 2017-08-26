@@ -16,7 +16,7 @@ export default class extends React.Component {
     }
 
     return (
-      <div className={'button '+classes} onClick={this.props.onClick}>
+      <div className={'button '+classes + ' z-shadow2'} onClick={this.props.onClick}>
         {emoji?<span className='container'><span className='emoji'>{emoji}</span><span className='emojiDown'>{emojiDown}</span></span>:''}{this.props.children}
         <div className={"spinner"+spinnerClass}></div>
         <style jsx>{`
@@ -41,7 +41,6 @@ export default class extends React.Component {
             margin: 12px 0px;
             text-align: center;
             cursor:pointer;
-            box-shadow: 0px 2px rgba(0,0,0,.2);
           }
           .button:active {
             position: relative;

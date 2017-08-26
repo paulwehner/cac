@@ -116,7 +116,6 @@ export default class extends Component {
           }
           .container {
             text-align: center;
-            border: 1px solid lightgrey;
             width: 800px;
             margin: 0 auto;
             border-radius: 3px;

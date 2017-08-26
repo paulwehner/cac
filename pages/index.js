@@ -28,15 +28,14 @@ export default class extends Component {
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <div className="nav">
           <span className="navItem white text-lig">About</span>
-          <span className="navItem white text-lig">Pricing</span>
           <span className="navItem white text-lig">Sign In</span>
         </div>
         <Title>Lannister</Title>
-        <Title type="sub" style={{paddingBottom: '50px'}}>Get a loan using your blockchain accounts as collateral.</Title>
-        <div className="callout whiteBackground text-reg">
+        <Title type="sub" style={{paddingBottom: '50px', textTransform: 'none !important'}}>Get a loan using your blockchain accounts as collateral.</Title>
+        <div className="callout whiteBackground text-reg z-shadow1">
           <div className="calloutTitle black">How much do you want to borrow?</div>
           <div className="sliderContainer">
-            <div className="sliderInnerContainert">
+            <div className="sliderInnerContainer">
               <Slider
                 value={amount}
                 min={0}
@@ -86,7 +85,6 @@ export default class extends Component {
             text-align: center;
           }
           .callout {
-            border: 1px solid grey;
             border-radius: 3px;
             width: 600px;
             margin: 0 auto;
@@ -102,18 +100,18 @@ export default class extends Component {
             margin-bottom: 40px;
             height: 60px;
           }
-          .sliderInnerContainert {
+          .sliderInnerContainer {
             float: left;
             width: 400px;
           }
           .amount {
-            float: left;
+            float: right;
             padding-top: 10px;
             padding-bottom: 10px;
             font-size: 30px;
             width: 100px;
             border-radius: 3px;
-            margin-left: 30px;
+            margin-left: 10px;
           }
           .sliderImg {
             padding-top: 40px;
