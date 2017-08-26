@@ -15,10 +15,9 @@ export default class extends React.Component {
             padding-bottom: 20px;
           }
           .title.sub {
-            font-size: 30px;
-            padding-top: 24px;
+            font-size: 28px;
+            padding-top: 10px;
             padding-bottom: 0px;
-		        text-transform: uppercase;
           }
         `}</style>
       </div>
