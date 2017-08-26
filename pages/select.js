@@ -8,19 +8,32 @@ export default () => (
   <Page>
     <div className="home pink">Lannister</div>
     <div className="outerContainer">
-      <div className="container">
+      <div className="container whiteBackground">
+        <div className="title blackDark text-lig">Select any/all smart contracts that you are willing to put up as collateral to secure a loan:</div>
+        <div className="blocks">
+          <div className="blockContainer">
+            <div className="block pinkBackground" style={{backgroundImage:'url(../static/assets/icons/leeroy.png)'}}>
+            </div>
+            <div className="label text-reg black">Leeroy.io</div>
+          </div>
+          <div className="block"></div>
+          <div className="block"></div>
+          <div className="block"></div>
+          <div className="block"></div>
+          <div className="block"></div>
+        </div>
+        <div className="buttonContainer">
+          <Link href='/loans'>
+            <Button>Next</Button>
+          </Link>
+        </div>
+        <div className="backContainer">
+          <Link href='/'>
+            <a className="text-lig back grey">BACK</a>
+          </Link>
+        </div>
 
       </div>
-    </div>
-    <div className="buttonContainer">
-      <Link href='/loans'>
-        <Button>Next</Button>
-      </Link>
-    </div>
-    <div className="backContainer">
-      <Link href='/'>
-        <a className="text-lig back grey">BACK</a>
-      </Link>
     </div>
     <style jsx>{`
       .home {
@@ -35,10 +48,30 @@ export default () => (
       }
       .container {
         text-align: center;
-        border: 1px solid grey;
+        border: 1px solid lightgrey;
         height: 500px;
         width: 800px;
         margin: 0 auto;
+        border-radius: 3px;
+      }
+      .title {
+        font-size: 24px;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .blockContainer {
+        float: left;
+      }
+      .block {
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
       .buttonContainer {
         text-align: center;

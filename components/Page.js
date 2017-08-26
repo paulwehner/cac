@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { Component } from 'react'
+import Head from 'next/head'
 import fonts from '../static/stylesheets/fonts'
 import colors from '../static/stylesheets/colors'
 
@@ -9,11 +10,15 @@ export default class Page extends Component {
   }
 
   render() {
-    const { background = 'white', className ='', style, type='split'} = this.props
+    const { background = 'white', className ='', style, type=''} = this.props
     let classes = background+'Background '+className+' '+type;
 
     return (
       <div className={'page'} style={style}>
+        <Head>
+          <title>Lannister</title>
+          <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico' />
+        </Head>
         <div className={'background '+classes}></div>
         {this.props.children}
         <style jsx>{`

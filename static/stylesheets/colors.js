@@ -3,6 +3,9 @@ import {colors} from '../variables.js'
 export default `
   html, body {
     margin: 0px;
+    background-color: #fff;
+    position: relative;
+    z-index: -2;
   }
   .gradientBackground {
     background-image: linear-gradient(0deg, #${colors.peach} 0%, #${colors.pink} 100%);
