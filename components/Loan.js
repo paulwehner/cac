@@ -12,7 +12,7 @@ export default class extends React.Component {
         {icon ? <image src={icon} className='icon'></image>:''}
         <div className='title'>{title}</div>
         <div className='sub'>{sub}</div>
-        <div className='apply blueBackground white text-reg'>APPLY</div>
+        <div className='apply blueBackground white text-reg'>Review and Apply</div>
         <style jsx>{`
           .button {
             position: relative;
