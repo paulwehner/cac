@@ -60,7 +60,7 @@ export default class extends Component {
                 let a = accounts[keyName]
                 let selected = a.selected ? ' greenDarkBackground' : ' pinkBackground'
                 return (
-                  <div className="row " onClick={this.handleOnSelect} data-id={keyName}>
+                  <div key={keyIndex} className="row " onClick={this.handleOnSelect} data-id={keyName}>
                     <div className={"top main white text-lig" + selected}>
                       <span className="label white text-lig">Address</span>
                       {keyName}
