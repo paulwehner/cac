@@ -51,7 +51,7 @@ export default class extends Component {
     return (
       <Page>
         <div className="home pink">Lannister</div>
-        <div className="outerContainer">
+        <div className="outerContainer text-lig">
           <div className="container whiteBackground">
             <div className="title blackDark text-lig">Connect your ERC20 account(s)</div>
             <div className="sub blackDark text-lig">We automatically detected your {total_length} ERC20 account(s) via MetaMask.</div>
@@ -187,7 +187,7 @@ export default class extends Component {
             width: 400px;
           }
           .backContainer {
-            margin-top: 40px;
+            margin-top: 25px;
             text-align: center;
           }
           .back {

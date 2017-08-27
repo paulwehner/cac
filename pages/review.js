@@ -23,7 +23,7 @@ export default class extends Component {
         <div className="home white">Lannister</div>
         <div className="outerContainer">
           <Title>Review and Accept</Title>
-          <div className="container whiteBackground">
+          <div className="container whiteBackground z-shadow1">
             <div className="title black text-lig">Contract Terms and Conditions</div>
 
             <div className="inner">
@@ -140,7 +140,7 @@ export default class extends Component {
             width: 400px;
           }
           .backContainer {
-            margin-top: 40px;
+            margin-top: 25px;
             text-align: center;
           }
           .back {
