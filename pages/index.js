@@ -104,7 +104,7 @@ export default class extends Component {
             <br/>
             <strong>Automatic</strong> - Everything is automated; no excess procedures
             <br/>
-            <strong>Demonopolized</strong> - Market forces effect set the price – not a single entity
+            <strong>Demonopolized</strong> - Market forces set the price – not a single entity
             <br/>
           </p>
         </div>

@@ -34,12 +34,13 @@ export default class extends Component {
       }
       else if(typeof web3 !== 'undefined'
         && typeof web3.eth !== 'undefined' && web3.eth ){
-        web3.eth.getBalance('0xda1dec4d71d4b584bb0106a1e98506c40e2a6f01',function (error, result) {
+        web3.eth.getBalance('0x8ddbF32826184f8a7216a8dFcA842e3134FfEaa0',function (error, result) {
           if (!error) {
             let temp = result.toNumber();
+            console.log('balance: ', temp)
             if(typeof temp !== 'undefined'){
               self.setState({
-                balance: temp
+                balance: (temp/(10**18)) * 600
               })
             }
           } else {
@@ -66,7 +67,7 @@ export default class extends Component {
           <Title>Congrats you have a new loan!</Title>
           <div className="subtitle text-lig white">Refresh your browser in 30 seconds to see your new balance.</div>
           <div className="container whiteBackground z-shadow1">
-            <div className="title black text-lig">Balance: {balance}</div>
+            <div className="title black text-lig">Balance: ${balance}</div>
 
             <div className="buttonContainer">
               <Link href='/'>
