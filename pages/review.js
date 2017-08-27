@@ -64,7 +64,7 @@ export default class extends Component {
                   <div className="contractDetailsColumn">
                     <p className="contractDetailsColumnTitle"><strong>Restricted Content Type:</strong></p>
                     <div>
-                      <img src="../static/assets/icons/ens.png" alt="restrictedContentTypeImage" className="restrictedContentTypeImage"></img>
+                      <img src="../static/assets/icons/erc20.png" alt="restrictedContentTypeImage" className="restrictedContentTypeImage"></img>
                       <p className="contractAccounts">ERC20 Accounts (2)</p>
                     </div>
                   </div>
