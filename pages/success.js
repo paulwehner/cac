@@ -20,32 +20,34 @@ export default class extends Component {
   componentDidMount() {
     let self = this;
     let { balance} = this.state
-    if(typeof web3 !== 'undefined'
-      && typeof web3.eth !== 'undefined' && web3.eth
-      && typeof web3.eth.accounts !== 'undefined' && web3.eth.accounts
-      && typeof web3.eth.accounts[0] !== 'undefined' && web3.eth.accounts[0] ){
-      let temp = web3.eth.getBalance(web3.eth.accounts[0]);
-      if(typeof temp !== 'undefined'){
-        self.setState({
-          balance: temp
+    setTimeout(function(){
+      if(typeof web3 !== 'undefined'
+        && typeof web3.eth !== 'undefined' && web3.eth
+        && typeof web3.eth.accounts !== 'undefined' && web3.eth.accounts
+        && typeof web3.eth.accounts[0] !== 'undefined' && web3.eth.accounts[0] ){
+        let temp = web3.eth.getBalance(web3.eth.accounts[0]);
+        if(typeof temp !== 'undefined'){
+          self.setState({
+            balance: temp
+          })
+        }
+      }
+      else if(typeof web3 !== 'undefined'
+        && typeof web3.eth !== 'undefined' && web3.eth ){
+        web3.eth.getBalance('0xda1dec4d71d4b584bb0106a1e98506c40e2a6f01',function (error, result) {
+          if (!error) {
+            let temp = result.toNumber();
+            if(typeof temp !== 'undefined'){
+              self.setState({
+                balance: temp
+              })
+            }
+          } else {
+            console.error(error);
+          }
         })
       }
-    }
-    else if(typeof web3 !== 'undefined'
-      && typeof web3.eth !== 'undefined' && web3.eth ){
-      web3.eth.getBalance('0xda1dec4d71d4b584bb0106a1e98506c40e2a6f01',function (error, result) {
-        if (!error) {
-          let temp = result.toNumber();
-          if(typeof temp !== 'undefined'){
-            self.setState({
-              balance: temp
-            })
-          }
-        } else {
-          console.error(error);
-        }
-      })
-    }
+    }, 1000)
   }
 
   handleOnSelect = (event) => {
