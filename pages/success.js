@@ -5,10 +5,46 @@ import Button from '../components/Button'
 import Title from '../components/Title'
 
 export default class extends Component {
+  static async getInitialProps ({req, query}) {
+    let balance = '...';
+    return { balance }
+  }
+
   constructor(props, context) {
     super(props, context)
     this.state = {
+      balance: this.props.balance
+    }
+  }
 
+  componentDidMount() {
+    let self = this;
+    let { balance} = this.state
+    if(web3 && typeof web3 !== 'undefined'
+      && web3.eth && typeof web3.eth !== 'undefined'
+      && web3.eth.accounts && typeof web3.eth.accounts !== 'undefined'
+      && web3.eth.accounts[0] && typeof web3.eth.accounts[0] !== 'undefined'){
+      let temp = web3.eth.getBalance(web3.eth.accounts[0]);
+      if(typeof temp !== 'undefined'){
+        self.setState({
+          balance: temp
+        })
+      }
+    }
+    else if(web3 && typeof web3 !== 'undefined'
+      && web3.eth && typeof web3.eth !== 'undefined'){
+      web3.eth.getBalance('0xda1dec4d71d4b584bb0106a1e98506c40e2a6f01',function (error, result) {
+        if (!error) {
+          let temp = result.toNumber();
+          if(typeof temp !== 'undefined'){
+            self.setState({
+              balance: temp
+            })
+          }
+        } else {
+          console.error(error);
+        }
+      })
     }
   }
 
@@ -18,94 +54,40 @@ export default class extends Component {
   }
 
   render() {
+    let {balance} = this.state
     return (
-      <Page background="gradient" type="split">
+      <Page background="gradient" >
         <Link href="/">
           <div className="home white">Lannister</div>
         </Link>
         <div className="outerContainer">
-          <Title>Review and Accept</Title>
+          <Title>Congrats you have a new loan!</Title>
+          <div className="subtitle text-lig white">Refresh your browser in 30 seconds to see your new balance.</div>
           <div className="container whiteBackground z-shadow1">
-            <div className="title black text-lig">Contract Terms and Conditions</div>
-
-            <div className="inner">
-
-              <section className="contractTermsAndConditionsContainer text-lig">
-                {/* Person and finance charge, repayment */}
-                <div className="creditorAndDetailsContainer">
-                  <div className="creditorProfileContainer">
-                    <div className="creditorProfilePicture">
-                      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="Creditor!"></img>
-                    </div>
-                    <div className="creditorInfo">
-                      <h4>Cordelia F.</h4>
-                      <h5 className="loanAmount"><strong>$600 Loan</strong></h5>
-                    </div>
-                    <div className="clearBoth"></div>
-                  </div>
-                  <div className="loanDetails">
-                    <div className="financeCharge">
-                      <sub className="subTop">Finance Charge</sub>
-                      <h3>$6.00</h3>
-                      <sub className="greyText"><i>APR: 8.00%</i></sub>
-                    </div>
-                    <div className="financeRepayment">
-                      <sub className="subTop">Repayment</sub>
-                      <h3>$648.00</h3>
-                      <sub className="greyText"><i>due in 1 month</i></sub>
-                    </div>
-                  </div>
-                  <div className="clearBoth"></div>
-                </div>
-                {/* END: Person and finance charge, repayment */}
-
-                {/* Dapp Contract Details */}
-                <div className="dappContractDetailsContainer">
-                  <div className="contractDetailsColumn">
-                    <p className="contractDetailsColumnTitle"><strong>Restricted Content Type:</strong></p>
-                    <div>
-                      <img src="../static/assets/icons/erc20.png" alt="restrictedContentTypeImage" className="restrictedContentTypeImage"></img>
-                      <p className="contractAccounts">ERC20 Accounts (2)</p>
-                    </div>
-                  </div>
-                  <div className="contractDetailsColumn">
-                    <p className="contractDetailsColumnTitle"><strong>Restricted Functions:</strong></p>
-                    <ul className="lanUl">
-                      <li>Transfer</li>
-                      <li>Approve</li>
-                    </ul>
-                  </div>
-                  <div className="contractDetailsColumn">
-                    <p className="contractDetailsColumnTitle"><strong>Trustee Restricted Functions:</strong></p>
-                    <ul className="lanUl">
-                      <li>Transfer</li>
-                      <li>Approve</li>
-                    </ul>
-                  </div>
-                  <div className="clearBoth"></div>
-                </div>
-                {/* END: Dapp Contract Details */}
-
-              </section>
-
-
-
-            </div>
+            <div className="title black text-lig">Balance: {balance}</div>
 
             <div className="buttonContainer">
-              <Link href='/success'>
-                <Button>START THE LOAN</Button>
+              <Link href='/'>
+                <Button>GO HOME</Button>
               </Link>
             </div>
-            <div className="backContainer">
-              <Link href='/loans'>
-                <a className="text-lig back grey">NEVERMIND, GO BACK TO APPROVED LOANS</a>
-              </Link>
-            </div>
+            <div className="grey text-lig bottom">Remember, a Lannister always pays his debts.</div>
 
           </div>
         </div>
         <style jsx>{`
+          .subtitle {
+            font-size: 24px;
+            padding-top: 10px;
+            padding-bottom: 50px;
+            text-align: center;
+            margin: 0 auto;
+            font-style: italic;
+          }
+          .bottom {
+            padding-top: 20px;
+            font-style: italic;
+          }
           .home {
             position: absolute;
             top: 15px;
@@ -115,6 +97,7 @@ export default class extends Component {
           }
           .outerContainer {
             padding-top: 100px;
+            padding-bottom: 800px;
           }
           .container {
             text-align: center;
@@ -124,11 +107,12 @@ export default class extends Component {
             padding-bottom: 30px;
           }
           .title {
-            font-size: 24px;
+            font-size: 54px;
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
-            padding-top: 40px;
+            padding-top: 100px;
+            padding-bottom: 40px;
             padding-left: 20px;
             padding-right: 20px;
           }
@@ -140,6 +124,7 @@ export default class extends Component {
             text-align: center;
             margin: 0 auto;
             width: 400px;
+            margin-top: 40px;
           }
           .backContainer {
             margin-top: 25px;
