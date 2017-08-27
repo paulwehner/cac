@@ -13,7 +13,7 @@ export default class Page extends Component {
   }
 
   render() {
-    const { background = 'white', className ='', style, type=''} = this.props
+    const { background = 'whitePure', className ='', style, type=''} = this.props
     let classes = background+'Background '+className+' '+type;
 
     return (

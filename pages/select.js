@@ -72,7 +72,9 @@ export default class extends Component {
 
     return (
       <Page>
-        <div className="home pink">Lannister</div>
+        <Link href="/">
+          <div className="home pink">Lannister</div>
+        </Link>
         <div className="outerContainer">
           <div className="container whiteBackground z-shadow1">
             <div className="title blackDark text-lig">Select any/all smart contracts that you are willing to put up as collateral to secure a loan:</div>

@@ -19,6 +19,9 @@ export default `
   .whiteBackground {
     background-color: #${colors.white};
   }
+  .whitePureBackground {
+    background-color: #${colors.whitePure};
+  }
   .orangeBackground {
     background-color: #${colors.orange};
   }

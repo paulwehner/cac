@@ -2,6 +2,7 @@ const colors =  {
   'pink': 'FF0844',
   'peach': 'FFB199',
   'white': 'FCFCFC',
+  'whitePure': 'FFFFFF',
   'orange': 'FF7E08',
   'blue': '0DE1FF',
   'green': '69FF08',

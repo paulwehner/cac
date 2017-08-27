@@ -11,14 +11,19 @@ export default class extends Component {
       accounts: {
         '0x230CACd4242BDb5B9f7178eb1dB0ad109EC76ca0': {
           selected: false,
-          eth: 0.45140176
+          amount: 10.12,
+          type: 'GNO',
+          label: 'Gnosis',
+          conversion: 187.63
         },
-        '0x113CACd4242BDb5B9f7178eb1dB0ad109EC76ca0': {
+        '0x113BZSX4242BDb5B9f7178eb1dB0ad109EC76ca0': {
           selected: false,
-          eth: 0.45140176
+          amount: 4.23,
+          type: 'REP',
+          label: 'Augur',
+          conversion: 30.34
         }
-      },
-      conversion: 330.44
+      }
     }
   }
 
@@ -32,7 +37,7 @@ export default class extends Component {
   }
 
   render() {
-    let {accounts, conversion} = this.state
+    let {accounts} = this.state
     let total_length = Object.keys(accounts).length
     let total_value = 0
     let length = 0
@@ -40,7 +45,7 @@ export default class extends Component {
       let account = accounts[a]
       if(account.selected){
         length++
-        total_value += account.eth
+        total_value += account.amount * account.conversion
       }
     }
     let disabled = true
@@ -50,7 +55,9 @@ export default class extends Component {
 
     return (
       <Page>
-        <div className="home pink">Lannister</div>
+        <Link href="/">
+          <div className="home pink">Lannister</div>
+        </Link>
         <div className="outerContainer text-lig">
           <div className="container whiteBackground">
             <div className="title blackDark text-lig">Connect your ERC20 account(s)</div>
@@ -67,18 +74,18 @@ export default class extends Component {
                     </div>
                     <div className="bottom main">
                       <div className="left">
-                        <span className="label blackDark text-lig">ETH Balance</span>
-                        {a.eth} Ether
+                        <span className="label blackDark text-lig">{a.type} Balance</span>
+                        {a.amount} {a.label}
                       </div>
                       <div className="right ">
                         <span className="label blackDark text-lig">USD Balance </span>
-                        ${a.eth * conversion} (@ ${conversion}/ETH)
+                        ${Math.round(a.amount * a.conversion*100)/100} (@ ${a.conversion}/{a.type})
                       </div>
                     </div>
                   </div>
                 )
               })}
-            <div className="grey text-reg selectedContainer">You have selected {length} account(s) with a total ETH balance of {total_value} Ether.</div>
+            <div className="grey text-reg selectedContainer">You have selected {length} account(s) with a total USD balance of ${Math.round(total_value*100)/100}.</div>
             </div>
             <div className="buttonContainer">
               <Link href='/loans'>

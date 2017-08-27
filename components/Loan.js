@@ -16,7 +16,7 @@ export default class extends React.Component {
     }
 
     return (
-      <div className={'whiteBackground button '+classes} onClick={this.props.onClick}>
+      <div className={'whiteBackground button z-shadow2 '+classes} onClick={this.props.onClick}>
         {icon ? <img src={icon} className='icon'></img>:''}
         <div className='title text-lig'>{title}</div>
         <div className='sub text-reg'>{sub}</div>
@@ -30,7 +30,7 @@ export default class extends React.Component {
           <div className='main'>{repayment}</div>
           <div className='bottomLabel greyDark'>due in 1 month</div>
         </div>
-        <div className='apply blueBackground white text-reg'>REVIEW AND ACCEPT</div>
+        <div className='apply blueBackground white text-reg'>REVIEW</div>
         <style jsx>{`
           .finance {
             position: absolute;
@@ -115,7 +115,7 @@ export default class extends React.Component {
             right: 30px;
             top: 14px;
             bottom: 12px;
-            width: 280px;
+            width: 180px;
             font-size: 26px;
             line-height: 57px;
             padding: 0 20px;

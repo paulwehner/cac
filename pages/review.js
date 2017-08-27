@@ -20,7 +20,9 @@ export default class extends Component {
   render() {
     return (
       <Page background="gradient" type="split">
-        <div className="home white">Lannister</div>
+        <Link href="/">
+          <div className="home white">Lannister</div>
+        </Link>
         <div className="outerContainer">
           <Title>Review and Accept</Title>
           <div className="container whiteBackground z-shadow1">
@@ -37,19 +39,19 @@ export default class extends Component {
                     </div>
                     <div className="creditorInfo">
                       <h4>Cordelia F.</h4>
-                      <h5 className="loanAmount"><strong>$40 Loan</strong></h5>
+                      <h5 className="loanAmount"><strong>$600 Loan</strong></h5>
                     </div>
                     <div className="clearBoth"></div>
                   </div>
                   <div className="loanDetails">
                     <div className="financeCharge">
                       <sub className="subTop">Finance Charge</sub>
-                      <h3>$3.20</h3>
+                      <h3>$6.00</h3>
                       <sub className="greyText"><i>APR: 8.00%</i></sub>
                     </div>
                     <div className="financeRepayment">
                       <sub className="subTop">Repayment</sub>
-                      <h3>$42.30</h3>
+                      <h3>$648.00</h3>
                       <sub className="greyText"><i>due in 1 month</i></sub>
                     </div>
                   </div>
@@ -96,7 +98,7 @@ export default class extends Component {
               </Link>
             </div>
             <div className="backContainer">
-              <Link href='/select'>
+              <Link href='/loans'>
                 <a className="text-lig back grey">NEVERMIND, GO BACK TO APPROVED LOANS</a>
               </Link>
             </div>
