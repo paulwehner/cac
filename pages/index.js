@@ -28,15 +28,14 @@ export default class extends Component {
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <div className="nav">
           <span className="navItem white text-lig">About</span>
-          <span className="navItem white text-lig">Pricing</span>
           <span className="navItem white text-lig">Sign In</span>
         </div>
         <Title>Lannister</Title>
-        <Title type="sub" style={{paddingBottom: '50px'}}>Get a loan using your blockchain accounts as collateral.</Title>
-        <div className="callout whiteBackground text-reg">
+        <Title type="sub" style={{paddingBottom: '50px', textTransform: 'none !important'}}>Gain credit and exclusive services by collateralizing your crypto-life.</Title>
+        <div className="callout whiteBackground text-reg z-shadow1">
           <div className="calloutTitle black">How much do you want to borrow?</div>
           <div className="sliderContainer">
-            <div className="sliderInnerContainert">
+            <div className="sliderInnerContainer">
               <Slider
                 value={amount}
                 min={0}
@@ -55,11 +54,59 @@ export default class extends Component {
             </Link>
           </div>
         </div>
-        <div className="benefit">
-          <Title type='sub' color='black'>Benefit</Title>
+        <div className="benefit text-lig">
+          <Title type='sub' color='black' id="how-it-works">How it Works</Title>
+          <br/>
+          <p>Your blockchain accounts are worth money. See how much lenders are willing to give to you based on the accounts you own:</p>
+          <br/>
+          <div className="blocks">
+            <div className="row">
+              <div className="blockContainer">
+                <img className="serviceImage" src='../static/assets/icons/leeroy.png'></img>
+                <div className="label text-reg white">Leeroy.io</div>
+              </div>
+              <div className="blockContainer">
+                <img className="serviceImage" src='../static/assets/icons/centco.png'></img>
+                <div className="label text-reg white">Cent.co</div>
+              </div>
+              <div className="blockContainer">
+                <img className="serviceImage" src='../static/assets/icons/erc20.png'></img>
+                <div className="label text-reg white">ERC20</div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="blockContainer">
+                <img className="serviceImage" src='../static/assets/icons/ens.png'></img>
+                <div className="label text-reg white">Ethereum Name Service</div>
+              </div>
+              <div className="blockContainer">
+                <img className="serviceImage" src='../static/assets/icons/ownable.png'></img>
+                <div className="label text-reg white">Ownable</div>
+              </div>
+              <div className="blockContainer">
+                <img className="serviceImage" src='../static/assets/icons/custom.png'></img>
+                <div className="label text-reg white">Custom Wallet</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="benefit">
-          <Title type='sub' color='black'>Benefit</Title>
+        <div className="benefit text-lig">
+          <Title type='sub' color='black' id="benefits">Benefits</Title>
+          <br/>
+          <p className="paragraphOfBenefits">
+            <strong>Equality</strong> - Equal access to capital, regardless to history background or location
+            <br/>
+            <strong>Trust</strong> - Agreed upon guarantees to support relationships
+            <br/>
+            <strong>Transparency</strong> -  Nothing is kept in secret; all transactions are open to the public
+            <br/>
+            <strong>Decentralized</strong> - Lasting protection
+            <br/>
+            <strong>Automatic</strong> - Everything is automated; no excess procedures
+            <br/>
+            <strong>Demonopolized</strong> - Market forces effect set the price – not a single entity
+            <br/>
+          </p>
         </div>
         <div className="footer text-lig white blackBackground">
           Lannister
@@ -67,8 +114,8 @@ export default class extends Component {
         <style jsx>{`
           .nav {
             position: absolute;
-            top: 15px;
-            right: 40px;
+            top: 25px;
+            right: 25px;
             font-size: 16px;
           }
           .navItem {
@@ -86,7 +133,6 @@ export default class extends Component {
             text-align: center;
           }
           .callout {
-            border: 1px solid grey;
             border-radius: 3px;
             width: 600px;
             margin: 0 auto;
@@ -101,19 +147,20 @@ export default class extends Component {
             margin-top: 40px;
             margin-bottom: 40px;
             height: 60px;
+            max-width: 530px;
           }
-          .sliderInnerContainert {
+          .sliderInnerContainer {
             float: left;
             width: 400px;
           }
           .amount {
-            float: left;
+            float: right;
             padding-top: 10px;
             padding-bottom: 10px;
             font-size: 30px;
             width: 100px;
             border-radius: 3px;
-            margin-left: 30px;
+            margin-left: 10px;
           }
           .sliderImg {
             padding-top: 40px;
@@ -125,8 +172,32 @@ export default class extends Component {
             margin: 0 auto;
           }
           .benefit {
+            margin: 0 auto;
+            max-width: 500px;
             padding-top: 40px;
-            padding-bottom: 200px;
+            padding-bottom: 60px;
+          }
+          .blockContainer {
+            display: inline-block;
+            margin: 0 auto;
+            text-align: center;
+            vertical-align: middle;
+            background: #FF0844
+            padding: 20px;
+            margin: 10px;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+          }
+          .blocks {
+            text-align: center
+            margin: 0 auto;
+          }
+          .serviceImage {
+            height: 30px; width: 30px;
+          }
+          .paragraphOfBenefits {
+            padding-bottom: 60px;
           }
         `}</style>
       </Page>

@@ -17,7 +17,7 @@ export default class extends React.Component {
 
     return (
       <div className={'whiteBackground button '+classes} onClick={this.props.onClick}>
-        {icon ? <image src={icon} className='icon'></image>:''}
+        {icon ? <img src={icon} className='icon'></img>:''}
         <div className='title text-lig'>{title}</div>
         <div className='sub text-reg'>{sub}</div>
         <div className='finance'>

@@ -74,8 +74,9 @@ export default class extends Component {
       <Page>
         <div className="home pink">Lannister</div>
         <div className="outerContainer">
-          <div className="container whiteBackground">
+          <div className="container whiteBackground z-shadow1">
             <div className="title blackDark text-lig">Select any/all smart contracts that you are willing to put up as collateral to secure a loan:</div>
+            <p className="descriptiveParagraph text-lig">Make sure to only select accounts that you agree to forfeit to your creditor if you default on a loan.</p>
             <div className="blocks">
               <div className="row">
                 <div className="blockContainer">
@@ -138,7 +139,6 @@ export default class extends Component {
           }
           .container {
             text-align: center;
-            border: 1px solid lightgrey;
             width: 800px;
             margin: 0 auto;
             border-radius: 3px;
@@ -167,13 +167,14 @@ export default class extends Component {
           .block {
             height: 150px;
             width: 180px;
-            border-radius: 5px;
+            border-radius: 3px;
             background-repeat: no-repeat;
             background-position: center 35px;
             background-size: 80px 80px;
             cursor: pointer;
             position: relative;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.13);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10),
+              0 8px 17px rgba(0, 0, 0, 0.10);
           }
           .block:active {
             position: relative;
@@ -195,11 +196,20 @@ export default class extends Component {
             width: 400px;
           }
           .backContainer {
-            margin-top: 40px;
+            margin-top: 25px;
             text-align: center;
           }
           .back {
             cursor: pointer;
+          }
+
+          .descriptiveParagraph {
+            margin-top: 15px;
+            position: relative;
+          }
+          .text-reg {
+            padding: 10px;
+            padding-top: 5px;
           }
         `}</style>
       </Page>

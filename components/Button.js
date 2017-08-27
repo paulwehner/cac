@@ -16,7 +16,7 @@ export default class extends React.Component {
     }
 
     return (
-      <div className={'button '+classes} onClick={this.props.onClick}>
+      <div className={'button '+classes + ' z-shadow2'} onClick={this.props.onClick}>
         {emoji?<span className='container'><span className='emoji'>{emoji}</span><span className='emojiDown'>{emojiDown}</span></span>:''}{this.props.children}
         <div className={"spinner"+spinnerClass}></div>
         <style jsx>{`
@@ -34,19 +34,23 @@ export default class extends React.Component {
             position: relative;
 		        text-transform: uppercase;
             line-height: 50px;
-            font-size: 30px;
+            font-size: 24px;
             border-radius: 100px;
-            padding-top: 12px;
-            padding-bottom: 14px;
+            padding-top: 8px;
+            padding-bottom: 10px;
             margin: 12px 0px;
             text-align: center;
             cursor:pointer;
-            box-shadow: 0px 2px rgba(0,0,0,.2);
           }
           .button:active {
             position: relative;
             top: 1px;
             left: 1px;
+            box-shadow: none !important;
+          }
+          .button:focus, .button:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10),
+              0 8px 17px rgba(0, 0, 0, 0.10);
           }
           .container {
             padding-right: 10px;

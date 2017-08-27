@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import React, { Component } from 'react'
 import Head from 'next/head'
+import reset from '../static/stylesheets/reset'
 import fonts from '../static/stylesheets/fonts'
 import colors from '../static/stylesheets/colors'
+import layers from '../static/stylesheets/layers'
+import input from '../static/stylesheets/input'
 
 export default class Page extends Component {
   constructor (props) {
@@ -169,8 +172,11 @@ export default class Page extends Component {
           }
 
         `}</style>
+        <style global jsx>{reset}</style>
         <style global jsx>{fonts}</style>
         <style global jsx>{colors}</style>
+        <style global jsx>{layers}</style>
+        <style global jsx>{input}</style>
       </div>
     )
   }
