@@ -30,7 +30,7 @@ export default class extends Component {
           <span className="navItem white text-lig">About</span>
           <span className="navItem white text-lig">Sign In</span>
         </div>
-        <Title>Lannister</Title>
+        <div className="logo"><img className="logoImg" src="../static/assets/logo/white.png"></img></div>
         <Title type="sub" style={{paddingBottom: '50px', textTransform: 'none !important'}}>Gain credit and exclusive services by collateralizing your crypto-life.</Title>
         <div className="callout whiteBackground text-reg z-shadow1">
           <div className="calloutTitle black">How much do you want to borrow?</div>
@@ -112,6 +112,14 @@ export default class extends Component {
           Lannister
         </div>
         <style jsx>{`
+          .logo {
+            text-align: center;
+            padding-top: 80px;
+            padding-bottom: 30px;
+          }
+          .logoImg {
+            height: 40px;
+          }
           .nav {
             position: absolute;
             top: 25px;
