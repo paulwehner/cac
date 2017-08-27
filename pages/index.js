@@ -108,6 +108,20 @@ export default class extends Component {
             <br/>
           </p>
         </div>
+        <div className="benefit text-lig" style={{position:'relative',top:'-30px'}}>
+          <Title type='sub' color='black' id="benefits">Assets</Title>
+          <br/>
+          <p className="paragraphOfBenefits">
+            <strong><a href="http://pitch.lannister.tech/">Lannister Pitch Deck</a></strong>
+            <br/>
+            <strong><a href="https://github.com/paulwehner/cac">Lannister Website Github</a></strong>
+            <br/>
+            <strong><a href="https://github.com/paulwehner/lannister-alexa">Lannister Alexa Github</a></strong>
+            <br/>
+            <strong><a href="https://github.com/skilesare/lannister_contracts">Lannister Contracts Github</a></strong>
+            <br/>
+          </p>
+        </div>
         <div className="footer text-lig white blackBackground">
           Lannister
         </div>
@@ -183,7 +197,7 @@ export default class extends Component {
             margin: 0 auto;
             max-width: 500px;
             padding-top: 40px;
-            padding-bottom: 60px;
+            padding-bottom: 30px;
           }
           .blockContainer {
             display: inline-block;
